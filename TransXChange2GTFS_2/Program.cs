@@ -7,7 +7,7 @@ using System.Xml.Serialization;
 using System.Linq;
 using CsvHelper;
 
-namespace TransXChange2GTFS_2
+namespace LongestChainOfStopsInAlphabeticalOrder
 {
     class Program
     {
@@ -17,33 +17,28 @@ namespace TransXChange2GTFS_2
             List<ServiceAndLongestStops> ListOfServiceAndLongestStops = new List<ServiceAndLongestStops>();
 
             List<string> fileEntriesList = new List<string>();
-            // get every xml file in the folder
-            fileEntriesList.AddRange(Directory.GetFiles(@"D:\Dec_2017_traveline\EA", "*.xml"));
-            fileEntriesList.AddRange(Directory.GetFiles(@"D:\Dec_2017_traveline\EM", "*.xml"));
-            fileEntriesList.AddRange(Directory.GetFiles(@"D:\Dec_2017_traveline\L", "*.xml"));
-            fileEntriesList.AddRange(Directory.GetFiles(@"D:\Dec_2017_traveline\NCSD", "*.xml"));
-            fileEntriesList.AddRange(Directory.GetFiles(@"D:\Dec_2017_traveline\NE", "*.xml"));
-            fileEntriesList.AddRange(Directory.GetFiles(@"D:\Dec_2017_traveline\NW", "*.xml"));
-            fileEntriesList.AddRange(Directory.GetFiles(@"D:\Dec_2017_traveline\S", "*.xml"));
-            fileEntriesList.AddRange(Directory.GetFiles(@"D:\Dec_2017_traveline\SE", "*.xml"));
-            fileEntriesList.AddRange(Directory.GetFiles(@"D:\Dec_2017_traveline\SW", "*.xml"));
-            fileEntriesList.AddRange(Directory.GetFiles(@"D:\Dec_2017_traveline\W", "*.xml"));
-            fileEntriesList.AddRange(Directory.GetFiles(@"D:\Dec_2017_traveline\WM", "*.xml"));
-            fileEntriesList.AddRange(Directory.GetFiles(@"D:\Dec_2017_traveline\Y", "*.xml"));
+            // get every xml TransXChange file in the folder
+            string basePath = @"D:\Dec_2017_traveline\";
+            fileEntriesList.AddRange(Directory.GetFiles(basePath + "EA", "*.xml"));
+            fileEntriesList.AddRange(Directory.GetFiles(basePath + "EM", "*.xml"));
+            fileEntriesList.AddRange(Directory.GetFiles(basePath + "L", "*.xml"));
+            fileEntriesList.AddRange(Directory.GetFiles(basePath + "NCSD", "*.xml"));
+            fileEntriesList.AddRange(Directory.GetFiles(basePath + "NE", "*.xml"));
+            fileEntriesList.AddRange(Directory.GetFiles(basePath + "NW", "*.xml"));
+            fileEntriesList.AddRange(Directory.GetFiles(basePath + "S", "*.xml"));
+            fileEntriesList.AddRange(Directory.GetFiles(basePath + "SE", "*.xml"));
+            fileEntriesList.AddRange(Directory.GetFiles(basePath + "SW", "*.xml"));
+            fileEntriesList.AddRange(Directory.GetFiles(basePath + "W", "*.xml"));
+            fileEntriesList.AddRange(Directory.GetFiles(basePath + "WM", "*.xml"));
+            fileEntriesList.AddRange(Directory.GetFiles(basePath + "Y", "*.xml"));
 
             for (int i = 0; i < fileEntriesList.Count; i++)
             {
-
                 foreach (ServiceAndLongestStops service in getLongestListOfStopsFromTransXChangeFile(fileEntriesList[i]))
                 {
                     Console.WriteLine(i + " of " + fileEntriesList.Count + " files analysed. Longest = " + service.longestListOfStops.Count + "\t" + service.serviceName);
                     ListOfServiceAndLongestStops.Add(service);
                 }
-                /*}
-                catch
-                {
-                    Console.WriteLine(i + " of " + fileEntriesList.Count + " files analysed. LAST ONE FAILED.");
-                }*/
             }
 
             // get the service with the longest list, and print it out
@@ -58,8 +53,8 @@ namespace TransXChange2GTFS_2
                 Console.WriteLine(stopName);
             }
 
-            Console.WriteLine("Writing results to longestalphabeticalstops.csv");
-            TextWriter _textWriter = File.CreateText("longestalphabeticalstops.csv");
+            Console.WriteLine("Writing results to longestchainofstopsinalphabeticalorder.csv");
+            TextWriter _textWriter = File.CreateText("longestchainofstopsinalphabeticalorder.csv");
             CsvWriter _csvwriter = new CsvWriter(_textWriter);
             _csvwriter.WriteRecords(ListOfServiceAndLongestStops);
             _textWriter.Dispose();
@@ -68,7 +63,6 @@ namespace TransXChange2GTFS_2
             Console.Read();
         }
 
-        //string 
         static List<ServiceAndLongestStops> getLongestListOfStopsFromTransXChangeFile(string filePath)
         {
             //filePath = @"D:\Dec_2017_traveline\Y\SVRYWAO033A.xml";
@@ -148,7 +142,7 @@ namespace TransXChange2GTFS_2
                 }
                 catch
                 {
-
+                    // this is extremely rare.
                 }
             }
             return ListOfServices;
@@ -165,6 +159,7 @@ namespace TransXChange2GTFS_2
         public string mode { get; set; }
     }
 
+    // This is auto-generated from the largest TransXChange file in the Traveline dataset.
     // NOTE: Generated code may require at least .NET Framework 4.5 or .NET Core/Standard 2.0.
     /// <remarks/>
     [System.SerializableAttribute()]
@@ -2526,10 +2521,5 @@ namespace TransXChange2GTFS_2
             }
         }
     }
-
-
-
-
-
 
 }
