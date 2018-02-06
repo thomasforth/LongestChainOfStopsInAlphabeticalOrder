@@ -1,6 +1,6 @@
 # LongestChainOfStopsInAlphabeticalOrder
 
-A .NET 2 console application to Find the longest chain of consecutive public transport stop that are also in alphabetical order in Great Britain. It relies on the Traveline National Dataset (TNDS), which is available from [Traveline Open Data](http://www.travelinedata.org.uk/).
+A .NET 2 console application to find the longest chain of consecutive public transport stop that are also in alphabetical order in Great Britain. It relies on the Traveline National Dataset (TNDS), which is available from [Traveline Open Data](http://www.travelinedata.org.uk/).
 
 # How to run it?
 The Easiest way to run this program is to open the solution in Visual Studio 2017, change `string basePath = @"D:\Dec_2017_traveline\";` in `Program.cs` to point to unzipped TransXChange format xml files you've downloaded from Traveline, and run the program. .NET 2 applications can run on Linux, and Mac OS too if you like, you'll need to download the .NET 2 runtime. Expect it to take about 10 minutes on a 3GHz Intel Core i7.
