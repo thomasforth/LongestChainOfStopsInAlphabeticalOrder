@@ -18,6 +18,9 @@ There's both an Excel file (.xlsx) and a .csv file of the results in the `Longes
 * The longest consecutive coach jouney is 6 stops long. The 303 Rothwell - Market Harborough - Melton Mowbray, with consecutive stops at Bus Station, Chapel Building, Church Lane Hail & Ride, Horseshoe House Hail & Ride, Lowesby Lane Hail & Ride, Petrol Station Hail & Ride, The Farm Hail & Ride.
 * Two ferry journeys have 5 consecutive stops that are in alphabetical order. Both in London they are, Bankside Pier, Blackfriars Pier, Embankment Pier, Millbank Pier, Vauxhall St. George Wharf Pier and Battersea Power Station Pier, Cadogan Pier, Chelsea Harbour Pier, PLANTATION WHARF PIER, Wandsworth Riverside Quarter Pier.
 
+# Are you sure your calculations are right?
+No.
+
 # What about trains?
 The Traveline National Dataset provides timetables for Ferries, Coaches, Buses, Underground, Metro, and Light Rail in the TransXChange format. National Rail (train) timetables are available in another format (CIF) from a different website -- (ATOC data)[http://data.atoc.org/]. I may extend my analysis to this dataset in the future. I don't have time now.
 
