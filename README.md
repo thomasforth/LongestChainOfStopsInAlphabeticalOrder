@@ -30,4 +30,5 @@ No.
 The Traveline National Dataset provides timetables for Ferries, Coaches, Buses, Underground, Metro, and Light Rail in the TransXChange format. National Rail (train) timetables are available in another format (CIF) from a different website -- [RSP data](http://data.atoc.org/). My analysis of that is on the [LongestChainOfRailStopsInAlphabeticalOrder](https://github.com/thomasforth/LongestChainOfRailStopsInAlphabeticalOrder) repo.
 
 ## License
-MIT license.
+MIT license for my code.
+The data is derived from [Traveline Open Data](http://www.travelinedata.org.uk/) and [RSP data](http://data.atoc.org/).
