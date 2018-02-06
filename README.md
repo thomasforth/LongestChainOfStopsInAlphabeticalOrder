@@ -22,9 +22,9 @@ There's both an Excel file (.xlsx) and a .csv file of the results in the `Longes
 No.
 
 ## Why have you done this?
-1. I saw this tweet.
-2. I'm working on a project which needs me to parse TransXChange quickly and reliably, so it was time worth spending.
-3. Although this isn't a very useful project, the fact that it is possible is hugely important to the UK. It is open data like that provided by Traveline that allows tools like Google Maps to give you public transport directions. It also allows much more useful analysis that help plan public transport routes to ensure that people can get to the jobs, services, and entertainment that improves their lives. Part of why I did was to showcase the important work that the small independent organisation Traveline do to create and maintain a piece of Great Britain's world-class data infrastructure.
+1. I saw [this tweet](https://twitter.com/JonnElledge/status/959479588618489856). (Frustratingly, I've now analysed everything except train journeys.
+2. I'm currently working on a few projects that needs me to parse the TransXChange public transport timetable format quickly and reliably, so this was time worth spending.
+3. Although this isn't a very useful project, the fact that it is possible is hugely important to the UK. It is open data like that provided by Traveline that allows tools like Google Maps to give you public transport directions. It also allows much more useful analysis that helps plan public transport routes to ensure that people can get to the jobs, services, and entertainment that improves their lives. Part of why I did this was to show the important work that the small independent organisation Traveline do to create and maintain a piece of Great Britain's world-class data infrastructure.
 
 ## What about trains?
 The Traveline National Dataset provides timetables for Ferries, Coaches, Buses, Underground, Metro, and Light Rail in the TransXChange format. National Rail (train) timetables are available in another format (CIF) from a different website -- [ATOC data](http://data.atoc.org/). I may extend my analysis to this dataset in the future. I don't have time now.
